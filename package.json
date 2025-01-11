@@ -8,10 +8,23 @@
   },
   "author": "",
   "license": "ISC",
+  "browserslist": [
+      "last 2 chrome versions",
+      "last 2 firefox versions",
+      "last 2 ios versions"
+  ],
   "dependencies": {
+    "core-js": "^3.40.0",
     "jquery": "^3.7.1"
   },
   "devDependencies": {
-    "gulp": "^5.0.0"
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.26.3",
+    "babel-loader": "^9.2.1",
+    "gulp": "^5.0.0",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-stream": "^7.0.0"
   }
 }
