@@ -9,9 +9,9 @@
   "author": "",
   "license": "ISC",
   "browserslist": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 ios versions"
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 ios versions"
   ],
   "dependencies": {
     "core-js": "^3.40.0",
@@ -23,6 +23,8 @@
     "@babel/preset-react": "^7.26.3",
     "babel-loader": "^9.2.1",
     "gulp": "^5.0.0",
+    "gulp-sass": "^6.0.0",
+    "sass": "^1.83.1",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1",
     "webpack-stream": "^7.0.0"
