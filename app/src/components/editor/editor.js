@@ -9,6 +9,7 @@ export default class Editor extends Component {
             pageList: [],
             newPageName: ""
         }
+        this.createNewPage = this.createNewPage.bind(this);
     }
 
     componentDidMount() {
@@ -21,18 +22,27 @@ export default class Editor extends Component {
             .then(res => this.setState({pageList: res.data}))
     }
 
+    createNewPage() {
+        axios
+            .post("../../../api/createNewPage.php", {"name": this.state.newPageName})
+            .then(this.loadPageList())
+            .catch(() => alert("Page already exists!"));
+    }
+
     render() {
         const {pageList} = this.state;
-        const pages = pageList.map(page => {
+        const pages = pageList.map((page, i) => {
             return (
-                <h1>{page}</h1>
+                <h1 key={i}>{page}</h1>
             )
         });
 
         return (
             <>
-                <input type="text"/>
-                <button>Create page</button>
+                <input
+                    onChange={(e) => {this.setState({newPageName: e.target.value})}} 
+                    type="text"/>
+                <button onClick={this.createNewPage}>Create page</button>
                 {pages}
             </>
         )
